@@ -90,17 +90,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-// Initialize the scheduled tasks for the application
-const config = require('../config');
-const downloadTranscripts = require('./download-transcripts');
-const scrapeTranscripts = require('./scrape-transcripts');
-
-scrapeTranscripts(config).then((transcripts) => {
-  console.log(transcripts);
-}).catch(err => {
-  console.log(err)
-});
-
-//downloadTranscripts(config);
-//setInterval(() => { downloadTranscripts(config); }, config.ftpRefresh);
