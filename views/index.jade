@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= 'Digital Monologue'
+  div(id='container')
+    span(id='output')
+    span(class='cursor')= '|'
+  script(src='script/main.js')

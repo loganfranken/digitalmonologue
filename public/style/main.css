@@ -1,0 +1,54 @@
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
+
+h1
+{
+  height: 1px;
+  left: -10000em;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+#container
+{
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  margin: 2em auto;
+  max-width: 60em;
+  width: 90%;
+}
+
+/* Source: http://www.mattboldt.com/demos/typed-js/ */
+.cursor
+{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink
+{
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink
+{
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes blink
+{
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
