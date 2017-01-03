@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 /**
  * Module dependencies.
  */
@@ -88,3 +90,9 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// Initialize the scheduled tasks for the application
+const config = require('../config');
+const downloadTranscripts = require('./download-transcripts');
+
+setInterval(() => { downloadTranscripts(config); }, config.ftpRefresh);
