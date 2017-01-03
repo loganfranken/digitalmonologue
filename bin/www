@@ -94,5 +94,13 @@ function onListening() {
 // Initialize the scheduled tasks for the application
 const config = require('../config');
 const downloadTranscripts = require('./download-transcripts');
+const scrapeTranscripts = require('./scrape-transcripts');
 
-setInterval(() => { downloadTranscripts(config); }, config.ftpRefresh);
+scrapeTranscripts(config).then((transcripts) => {
+  console.log(transcripts);
+}).catch(err => {
+  console.log(err)
+});
+
+//downloadTranscripts(config);
+//setInterval(() => { downloadTranscripts(config); }, config.ftpRefresh);
